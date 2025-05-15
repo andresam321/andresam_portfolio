@@ -2,18 +2,25 @@ import React from "react";
 
 const experienceContent = [
   {
-    year: "2022 - Present",
-    position: "Software Engineer (AeroSkyOps Project)",
+    year: "2025 - Present",
+    position: "Software Engineer (Hey-Compa – Personal Project)",
+    companyName: "Personal Project",
+    details: `Hey-Compa is an AI-powered assistant designed to help users — particularly non-English speakers and older adults — 
+    understand and manage their bills. The system uses OCR (via PaddleOCR) to extract key billing details such as vendor, due date, 
+    and amount from uploaded images. It then maps that data to step-by-step payment instructions tailored to each provider.
+
+The backend is built using Flask and PostgreSQL, with a focus on modular design and future scalability. A React + Redux frontend 
+is planned to deliver a smooth, accessible user experience. Future features include voice-guided walkthroughs, SMS reminders, and multilingual support to expand accessibility.`
+  },
+  {
+    year: "2022 - 2025",
+    position: "Software Engineer (AeroSkyOps – Internal Tool for Rabbit Aviation)",
     companyName: "Rabbit Aviation",
-    details: `While working as a line service technician at Rabbit Aviation, I identified inefficiencies in managing aircraft assignments, fuel requests, and owner information. With the owner's permission, I independently designed and developed AeroSkyOps—a full-stack aviation management system that digitizes outdated workflows and improves operational efficiency.
-  
-  Key features include dynamic aircraft parking assignments, a real-time fuel request tracker with status updates ("En Route," "Complete," etc.), and integrations with the FlightAware AeroAPI and Weather API for near-live flight and weather data.
-  
-  To enhance fuel tracking, I built a visual fuel tank monitoring system with manual input, remaining capacity display, and refill alerts. I also implemented aircraft parking history logs for quick referencing of past assignments.
-  
-  The system is deployed on AWS EC2 with Docker, Nginx, and TLS encryption. I migrated the database from MongoDB to PostgreSQL using SQLAlchemy and integrated AWS S3 for image storage. Redux was introduced to improve UI responsiveness and reduce re-renders.
-  
-  Currently, I’m developing QR-based fuel request access for pilots and implementing role-based access control (RBAC) for secure feature permissions. AeroSkyOps has been in continuous development for over two years and is designed for real-world aviation workflows.`
+    details: `While working as a line service technician at Rabbit Aviation, I identified operational inefficiencies in how aircraft assignments, fuel requests, and owner information were tracked. With permission from the owner, I independently designed and built AeroSkyOps, a full-stack management platform tailored for airport workflows.
+
+Key features include dynamic aircraft parking assignment, real-time fuel request tracking (with “En Route,” “Complete” statuses), and integrations with FlightAware and Weather APIs. I also developed a visual fuel tank tracker and historical parking logs. The platform is deployed via AWS EC2 with Docker, Nginx, and TLS, and integrates AWS S3 for image storage. Redux improved UI responsiveness, and I migrated the backend from MongoDB to PostgreSQL using SQLAlchemy.
+
+Note: Actively deployed and in use. No longer in feature development.`
   },
   
   {

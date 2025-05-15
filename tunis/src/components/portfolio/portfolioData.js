@@ -39,22 +39,22 @@ const PortfolioData = [
   //     },
   //   ],
   // },
-  {
-    id: 6,
-    type: "Login",
-    image: Image18,
-    tag: ["video"],
-    delayAnimation: "100",
-    modalDetails: [
-      {
-        project: "Website",
-        Target: "Families",
-        language: "HTML, CSS, JS, Python, Flask, SQLite, Postgres, React, Redux, AWS, Docker",
-        preview: "https://plan-r-us.onrender.com",
-        link: "https://plan-r-us.onrender.com",
-      },
-    ],
-  },
+  // {
+  //   id: 6,
+  //   type: "Login",
+  //   image: Image18,
+  //   tag: ["video"],
+  //   delayAnimation: "100",
+  //   modalDetails: [
+  //     {
+  //       project: "Website",
+  //       Target: "Families",
+  //       language: "HTML, CSS, JS, Python, Flask, SQLite, Postgres, React, Redux, AWS, Docker",
+  //       preview: "https://plan-r-us.onrender.com",
+  //       link: "https://plan-r-us.onrender.com",
+  //     },
+  //   ],
+  // },
   // {
   //   id: 5,
   //   type: "slider project",
