@@ -5,12 +5,11 @@ const experienceContent = [
     year: "2025 - Present",
     position: "Software Engineer (Hey-Compa – Personal Project)",
     companyName: "Personal Project",
-    details: `Hey-Compa is an AI-powered assistant designed to help users — particularly non-English speakers and older adults — 
-    understand and manage their bills. The system uses OCR (via PaddleOCR) to extract key billing details such as vendor, due date, 
-    and amount from uploaded images. It then maps that data to step-by-step payment instructions tailored to each provider.
-
-The backend is built using Flask and PostgreSQL, with a focus on modular design and future scalability. A React + Redux frontend 
-is planned to deliver a smooth, accessible user experience. Future features include voice-guided walkthroughs, SMS reminders, and multilingual support to expand accessibility.`
+    details: `Hey-Compa is an AI-powered assistant designed to help users — particularly non-English speakers and older adults — understand and manage their bills. The system uses OCR (via PaddleOCR) to extract key billing details 
+    such as vendor, due date, and amount from uploaded images. It then maps that data to step-by-step payment instructions tailored to each provider. Recently, OpenAI’s GPT API was integrated to dynamically generate those instructions from OCR output. 
+    The backend is built using Flask and PostgreSQL, 
+    with a focus on modular design and future scalability.
+     A React + Redux frontend is planned to deliver a smooth, accessible user experience. Future features include voice-guided walkthroughs, SMS reminders, and multilingual support to expand accessibility.`
   },
   {
     year: "2022 - 2025",
