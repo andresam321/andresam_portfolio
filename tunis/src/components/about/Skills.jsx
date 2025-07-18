@@ -10,11 +10,11 @@ const skillsContent = [
   { skillClass: "p75", skillPercent: "75", skillName: "SQLite (SQL)"},
   { skillClass: "p65", skillPercent: "65", skillName: "MongoDB" },
   { skillClass: "p78", skillPercent: "78", skillName: "AWS (S3, EC2)" },
-  { skillClass: "p70", skillPercent: "75", skillName: "DOCKER" },
+  { skillClass: "p70", skillPercent: "79", skillName: "DOCKER" },
   { skillClass: "p90", skillPercent: "90", skillName: "GITHUB" },
   { skillClass: "p85", skillPercent: "85", skillName: "POSTMAN" },
-  { skillClass: "p72", skillPercent: "72", skillName: "FLASK" },
-  { skillClass: "p75", skillPercent: "75", skillName: "SQLAlchemy (ORM)" },
+  { skillClass: "p72", skillPercent: "85", skillName: "FLASK" },
+  { skillClass: "p75", skillPercent: "85", skillName: "SQLAlchemy (ORM)" },
   { skillClass: "p70", skillPercent: "70", skillName: "HTML & CSS" },
   { skillClass: "p72", skillPercent: "72", skillName: "Express.js" }
 ];

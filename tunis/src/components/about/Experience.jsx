@@ -1,8 +1,24 @@
 import React from "react";
 
 const experienceContent = [
+    {
+    year: "June 2025 - July 2025",
+    position: "Backend/Connector Engineer (Contract/Contributor)",
+    companyName: "Stacksync",
+    details: `At Stacksync, 
+    a Y Combinator-backed startup focused on structured data integration, 
+    I contributed as a connector engineer building a stateless backend integration with Firecrawl’s 
+    AI-powered web scraping platform. I developed a production-ready connector using Flask that enabled 
+    asynchronous batch scraping through Firecrawl’s /extract API, handling job initiation, webhook processing, 
+    and job ID-based result retrieval. To ensure scalability and reliability, I designed the system to avoid 
+    in-memory storage by fetching results on demand and implemented a retry mechanism for webhook delivery. 
+    My work involved parsing and cleaning structured JSON data to support schema flexibility, enabling smooth 
+    integration into downstream pipelines. I collaborated closely with a distributed engineering team, 
+    participating in sprint planning and architectural discussions to ensure that the connector aligned 
+    with Stacksync’s performance and reliability standards.`
+  },
   {
-    year: "2025 - Present",
+    year: "May 2025 - June 2025",
     position: "Software Engineer (Hey-Compa – Personal Project)",
     companyName: "Personal Project",
     details: `Hey-Compa is an AI-powered assistant designed to help users — particularly non-English speakers and older adults — understand and manage their bills. The system uses OCR (via PaddleOCR) to extract key billing details 
