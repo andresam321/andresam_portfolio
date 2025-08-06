@@ -1,22 +1,18 @@
 import React from "react";
 
 const experienceContent = [
-    {
-    year: "June 2025 - July 2025",
-    position: "Backend Engineer (Contract)",
-    companyName: "Stacksync",
-    details: `At Stacksync, 
-    a Y Combinator-backed startup focused on structured data integration, 
-    I contributed as a connector engineer building a stateless backend integration with Firecrawl’s 
-    AI-powered web scraping platform. I developed a production-ready connector using Flask that enabled 
-    asynchronous batch scraping through Firecrawl’s /extract API, handling job initiation, webhook processing, 
-    and job ID-based result retrieval. To ensure scalability and reliability, I designed the system to avoid 
-    in-memory storage by fetching results on demand and implemented a retry mechanism for webhook delivery. 
-    My work involved parsing and cleaning structured JSON data to support schema flexibility, enabling smooth 
-    integration into downstream pipelines. I collaborated closely with a distributed engineering team, 
-    participating in sprint planning and architectural discussions to ensure that the connector aligned 
-    with Stacksync’s performance and reliability standards.`
-  },
+{
+  year: "June 2025 – July 2025",
+  position: "Backend Engineer (Contract)",
+  companyName: "Stacksync",
+  details: `At Stacksync, a Y Combinator-backed startup focused on structured data integration, 
+  I engineered multiple stateless backend connectors using Flask. One example included integrating with Firecrawl’s 
+  AI-powered web scraping API to support asynchronous batch scraping through job ID-based workflows and webhook handling. 
+  I designed connectors to fetch results on demand without in-memory storage and implemented retry mechanisms for webhook delivery.
+  I collaborated with fellow engineers to ensure each connector was production-ready, 
+  handling structured JSON parsing and schema flexibility to support seamless downstream integration. 
+  I also contributed to sprint planning and architecture discussions to align with performance and reliability goals.`
+},
   {
     year: "May 2025 - June 2025",
     position: "Software Engineer (Hey-Compa – Personal Project)",
