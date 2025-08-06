@@ -1,18 +1,17 @@
 import React from "react";
 
 const educationContent = [
-  {
-    year: "2024",
-    course: "Software Engineer",
-    institute: "App Academy",
-    details: `App Academy is a renowned coding bootcamp that transforms students into full-stack software engineers through an intensive, 
-    immersive program. The curriculum covers JavaScript, Python, SQL, HTML, CSS,
-     and frameworks like React and Redux, with a strong emphasis on building scalable web applications.
-The program is structured around pair programming, group projects, and Agile methodologies, mirroring real-world team dynamics.
- I fully committed to this rigorous training, transitioning from my previous career to pursue my passion for software development. 
- This experience not only strengthened my technical expertise but also refined my ability to collaborate effectively, 
- solve problems under pressure, and work in fast-paced environments—all critical skills for thriving in the tech industry.`,
-  },
+{
+  year: "June 2025 – July 2025",
+  position: "Backend Engineer (Contract)",
+  companyName: "Stacksync",
+  details: `At Stacksync, a Y Combinator-backed startup focused on structured data integration, 
+  I engineered multiple stateless backend connectors using Flask. One example included integrating with Firecrawl’s AI-powered web scraping API 
+  to support asynchronous batch scraping through job ID-based workflows and webhook handling. 
+  I designed connectors to fetch results on demand without in-memory storage and implemented retry mechanisms for webhook delivery. 
+  I collaborated with fellow engineers to ensure each connector was production-ready, handling structured JSON parsing and schema flexibility to support seamless downstream integration. 
+  I also contributed to sprint planning and architecture discussions to align with performance and reliability goals.`
+},
   {
     year: "2022",
     course: "Software Engineer",

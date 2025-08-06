@@ -3,7 +3,7 @@ import React from "react";
 const experienceContent = [
     {
     year: "June 2025 - July 2025",
-    position: "Backend/Connector Engineer (Contract/Contributor)",
+    position: "Backend Engineer (Contract)",
     companyName: "Stacksync",
     details: `At Stacksync, 
     a Y Combinator-backed startup focused on structured data integration, 
