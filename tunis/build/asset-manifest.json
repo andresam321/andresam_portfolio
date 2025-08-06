@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.851e7e77.css",
-    "main.js": "/static/js/main.05fde33f.js",
+    "main.js": "/static/js/main.0b932fc9.js",
     "static/js/206.c7ebfab1.chunk.js": "/static/js/206.c7ebfab1.chunk.js",
     "static/media/plan_r_US_login.png": "/static/media/plan_r_US_login.92fce6f24224dfc068fe.png",
     "static/media/wuber_eats_food_details.png": "/static/media/wuber_eats_food_details.f1c93a1bed9e8b13908d.png",
@@ -17,8 +17,8 @@
     "static/media/skyhigh_weather.png": "/static/media/skyhigh_weather.dce7e679fea142e99e0f.png",
     "static/media/011.png": "/static/media/011.64e5bc17aeb993e7ee93.png",
     "static/media/01.png": "/static/media/01.f8c8d4ff1309c93cce71.png",
-    "static/media/AndresMercado_backend_resume.pdf": "/static/media/AndresMercado_backend_resume.b8afd7e7780e444d6c44.pdf",
-    "static/media/AndresMercado_full-stack_resume.pdf": "/static/media/AndresMercado_full-stack_resume.568d936c147e206226ab.pdf",
+    "static/media/AndresMercado_full-stack_resume.pdf": "/static/media/AndresMercado_full-stack_resume.d8ad8677384190e1b098.pdf",
+    "static/media/AndresMercado_backend_resume.pdf": "/static/media/AndresMercado_backend_resume.260a9a114aa178c95814.pdf",
     "static/media/AndresMercado_frontend_resume.pdf": "/static/media/AndresMercado_frontend_resume.a4a66fe32be09221ad42.pdf",
     "static/media/skyhigh_relationships-11.png": "/static/media/skyhigh_relationships-11.c95dac94d3690d6b3cd5.png",
     "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
@@ -38,6 +38,6 @@
   },
   "entrypoints": [
     "static/css/main.851e7e77.css",
-    "static/js/main.05fde33f.js"
+    "static/js/main.0b932fc9.js"
   ]
 }
