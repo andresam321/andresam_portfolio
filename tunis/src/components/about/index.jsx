@@ -51,12 +51,6 @@ const index = () => {
                   <span className="button-icon fa fa-download"></span>
                 </a>
               </div>
-              <div className="col-12 mt-1">
-                <a className="button" href={cv3} download>
-                  <span className="button-text">Frontend Resume</span>
-                  <span className="button-icon fa fa-download"></span>
-                </a>
-              </div>
               {/* End download button */}
             </div>
           </div>

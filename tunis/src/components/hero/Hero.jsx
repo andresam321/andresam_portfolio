@@ -10,12 +10,11 @@ const heroContent = {
   heroMobileImage: heroImgMobile,
   heroTitleName: "Andres Mercado",
   heroDesignation: "Software Engineer",
-  heroDescriptions: `Hi, I’m Andres — a Full-Stack Software Engineer driven by real-world impact.
+  heroDescriptions: `Hi, I’m Andres — a Full-Stack Software Engineer driven by real-world impact. 
 I come from a blend of American grit and Mexican resilience, and I channel that into everything I build. 
-I’m not just here to code — I’m here to solve problems that matter. Whether I’m building systems from the ground up or refining what’s already there, 
-I focus on clean design, purposeful functionality, and solutions that actually stick. 
-My path into tech started with a need to fix inefficiencies, and since then, 
-I’ve stayed obsessed with creating tools that simplify the complex and bring clarity to the chaos. 
+I’m not just here to code — I’m here to solve problems that matter. Whether building systems from the ground up or refining what’s already there, 
+I focus on clean design, purposeful functionality, and solutions that stick. 
+My path into tech started with a need to fix inefficiencies, and I’ve been obsessed with creating tools that simplify the complex ever since. 
 I build with intention, adapt fast, and always aim to leave things better than I found them.`,
   heroBtn: "more about me",
 };
