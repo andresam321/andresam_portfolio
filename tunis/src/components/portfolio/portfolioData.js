@@ -21,77 +21,66 @@ import Image19 from "../../assets/img/portfolio/wuberEats.png";
 import Image23 from "../../assets/img/portfolio/wuber_eats_food_details.png";
 import Image24 from "../../assets/img/portfolio/013.png";
 
-
 const PortfolioData = [
-  // {
-  //   id: 4,
-  //   type: "mockup project",
-  //   image: Image1,
-  //   tag: ["mockup"],
-  //   delayAnimation: "0",
-  //   modalDetails: [
-  //     {
-  //       project: "SkyHighOps",
-  //       client: "Envato",
-  //       language: "HTML, CSS, Javascript",
-  //       preview: "www.envato.com",
-  //       link: "https://www.envato.com/",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 6,
-  //   type: "Login",
-  //   image: Image18,
-  //   tag: ["video"],
-  //   delayAnimation: "100",
-  //   modalDetails: [
-  //     {
-  //       project: "Website",
-  //       Target: "Families",
-  //       language: "HTML, CSS, JS, Python, Flask, SQLite, Postgres, React, Redux, AWS, Docker",
-  //       preview: "https://plan-r-us.onrender.com",
-  //       link: "https://plan-r-us.onrender.com",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 5,
-  //   type: "slider project",
-  //   image: Image3,
-  //   tag: [],
-  //   delayAnimation: "200",
-  //   modalDetails: [
-  //     {
-  //       project: "Website",
-  //       client: "Themeforest",
-  //       language: " HTML, CSS, Javascript",
-  //       preview: "www.envato.com",
-  //       link: "https://www.envato.com",
-  //     },
-  //   ],
-  // },
-// {
-//     id: 8,
-//     type: "saas project",
-//     image: Image4,
-//     tag: ["logo"],
-//     delayAnimation: "100",
-//     modalDetails: [
-//       {
-//         project: "Web Application",
-//         client: "Themeforest",
-//         language: "HTML, CSS, ReactJS",
-//         preview: "www.envato.com",
-//         link: "https://themeforest.net/item/deski-saas-software-react-template/33799794",
-//       },
-//     ],
-//   },
+  /* =======================
+     PROPIA (TOP)
+  ======================= */
+{
+  id: 1,
+  type: "Propia, Async OCR Pipeline Execution",
+  // thumbnail: cropped to a clean card ratio so it won't squish in the grid
+  image: "https://res.cloudinary.com/djuzk5um3/image/upload/c_fill,w_900,h_520,g_north/v1765581333/short_async_ocr_pipeline_display_pluibq.png",
+  tag: ["logo"],
+  project: "propia",
+  delayAnimation: "0",
+  modalDetails: [
+    {
+      project: "Propia",
+      Target: "Landlords",
+      language:
+        "Python, FastAPI, Async SQLAlchemy, PostgreSQL, Docker, PaddleOCR, AWS S3",
+      // modal: show original full image
+      preview:"Cloudinary Link to view full image",
+      link:
+        "https://res.cloudinary.com/djuzk5um3/image/upload/v1765581333/short_async_ocr_pipeline_display_pluibq.png",
+    },
+  ],
+},
+
+{
+  id: 5,
+  type: "Propia, Async OCR Pipeline Execution",
+  // thumbnail: cropped to same ratio for consistency
+  image: "https://res.cloudinary.com/djuzk5um3/image/upload/c_fill,w_900,h_520,g_north/v1765581327/Async_OCR_Pipeline_Execution_vxy96o.png",
+  tag: ["logo"],
+  project: "propia",
+  delayAnimation: "0",
+  modalDetails: [
+    {
+      project: "Propia",
+      Target: "Landlords",
+      language:
+        "Python, FastAPI, Async SQLAlchemy, PostgreSQL, Docker, PaddleOCR, AWS S3",
+      // modal: original full image
+      preview:"Cloudinary Link to view full image",
+      link:
+        "https://res.cloudinary.com/djuzk5um3/image/upload/v1765581327/Async_OCR_Pipeline_Execution_vxy96o.png",
+    },
+  ],
+},
+
+
+
+
+  /* =======================
+     AEROSKYOPS (SECOND)
+  ======================= */
   {
     id: 21,
     type: "Relationships",
     image: Image4,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "100",
     modalDetails: [
       {
@@ -108,6 +97,7 @@ const PortfolioData = [
     type: "WireFrame",
     image: Image10,
     tag: ["logo", "mockup"],
+    project: "aeroskyops",
     delayAnimation: "200",
     modalDetails: [
       {
@@ -124,6 +114,7 @@ const PortfolioData = [
     type: "Login Page",
     image: Image11,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -135,11 +126,12 @@ const PortfolioData = [
       },
     ],
   },
-    {
+  {
     id: 8,
     type: "HomePage",
     image: Image12,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -151,11 +143,12 @@ const PortfolioData = [
       },
     ],
   },
-      {
+  {
     id: 20,
     type: "24 Hour Airport Weather",
     image: Image13,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -167,11 +160,12 @@ const PortfolioData = [
       },
     ],
   },
-        {
+  {
     id: 10,
     type: "Parking Spots",
     image: Image14,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -183,11 +177,12 @@ const PortfolioData = [
       },
     ],
   },
-        {
+  {
     id: 10,
     type: "Aircraft Status",
     image: Image24,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -204,6 +199,7 @@ const PortfolioData = [
     type: "Create Fuel Order",
     image: Image16,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -215,11 +211,12 @@ const PortfolioData = [
       },
     ],
   },
-    {
+  {
     id: 15,
     type: "Fuel Request List",
     image: Image17,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -236,6 +233,7 @@ const PortfolioData = [
     type: "Aircraft Details",
     image: Image15,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -252,6 +250,7 @@ const PortfolioData = [
     type: "Fuel Tank Levels",
     image: Image01,
     tag: ["logo"],
+    project: "aeroskyops",
     delayAnimation: "0",
     modalDetails: [
       {
@@ -263,48 +262,20 @@ const PortfolioData = [
       },
     ],
   },
-  //   {
-  //   id: 14,
-  //   type: "",
-  //   image: Image16,
-  //   tag: ["logo"],
-  //   delayAnimation: "0",
-  //   modalDetails: [
-  //     {
-  //       project: "Website",
-  //       client: "Airports",
-  //       language: "HTML, CSS, JS, Python, Flask, SQLite, SqlAlchemy Postgres, React, Redux, AWS, Docker",
-  //       // preview: "www.facebook.com",
-  //       link: "https://res.cloudinary.com/djuzk5um3/image/upload/v1724176772/project_images/skyhigh_plane_Details_j6betq.png",
-  //     },
-  //   ],
-  // },
-  //     {
-  //   id: 15,
-  //   type: "",
-  //   image: Image17,
-  //   tag: ["logo"],
-  //   delayAnimation: "0",
-  //   modalDetails: [
-  //     {
-  //       project: "Website",
-  //       client: "Airports",
-  //       language: "HTML, CSS, JS, Python, Flask, SQLite, SqlAlchemy Postgres, React, Redux, AWS, Docker",
-  //       // preview: "www.facebook.com",
-  //       link: "https://res.cloudinary.com/djuzk5um3/image/upload/v1724176772/project_images/skyhigh_plane_Details_j6betq.png",
-  //     },
-  //   ],
-  // },
+
+  /* =======================
+     WUBER EATS (LAST)
+  ======================= */
   {
     id: 25,
     type: "Wuber Eats",
     image: Image19,
     tag: ["graphic design"],
+    project: "wuber",
     delayAnimation: "100",
     modalDetails: [
       {
         project: "Website: Zach, Veronica, Joe and i",
-        // client: "Dribbble",
         language: "HTML, CSS, JS, Python, Flask, SQLite, SqlAlchemy Postgres, React, Redux, AWS, Docker",
         preview: "https://wuber-eats-2-0.onrender.com/",
         link: "https://wuber-eats-2-0.onrender.com/",
@@ -316,11 +287,11 @@ const PortfolioData = [
     type: "Wuber Eats Details",
     image: Image23,
     tag: ["graphic design"],
+    project: "wuber",
     delayAnimation: "200",
     modalDetails: [
       {
         project: "Website: Zach, Veronica, Joe and i",
-        // client: "Behance",
         language: "HTML, CSS, JS, Python, Flask, SQLite, SqlAlchemy Postgres, React, Redux, AWS, Docker",
         preview: "https://wuber-eats-2-0.onrender.com/",
         link: "https://wuber-eats-2-0.onrender.com/",

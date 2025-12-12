@@ -2,7 +2,18 @@ import React from "react";
 
 const experienceContent = [
 {
-  year: "June 2025 – July 2025",
+    year: "Oct 2025 – Present",
+    position: "Backend Engineer (Personal Project)",
+    companyName: "Propia",
+    details: [
+      "Building a backend-first lease ingestion platform using FastAPI, async PostgreSQL, and Docker.",
+      "Designed async job workflows (queue → GPU OCR worker → DB → client sync) for document processing.",
+      "Improved lease section chunking reliability with state and lease-type profiles, enabling embeddings and semantic search.",
+      "Integrated AWS S3 for document storage and multi-step ingestion flows.",
+    ],
+  },
+{
+  year: "June 2025 – September 2025",
   position: "Backend Engineer (Contract)",
   companyName: "Stacksync",
   details: `At Stacksync, a Y Combinator-backed startup focused on structured data integration, 
