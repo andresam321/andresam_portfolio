@@ -68,8 +68,48 @@ const PortfolioData = [
     },
   ],
 },
-
-
+{
+  id: 6,
+  type: "Lease QA",
+  // thumbnail: cropped to same ratio for consistency
+  image: "https://res.cloudinary.com/djuzk5um3/image/upload/v1770063843/lease_qa_pxljhb.png",
+  tag: ["logo"],
+  project: "propia",
+  delayAnimation: "0",
+  modalDetails: [
+    {
+      project: "Propia",
+      Target: "Landlords",
+      language:
+        "Python, FastAPI, Async SQLAlchemy, PostgreSQL, Docker, PaddleOCR, AWS S3",
+      // modal: original full image
+      preview:"Cloudinary Link to view full image",
+      link:
+        "https://res.cloudinary.com/djuzk5um3/image/upload/v1770063843/lease_qa_pxljhb.png",
+    },
+  ],
+},
+{
+  id: 7,
+  type: "Lease QA",
+  // thumbnail: cropped to same ratio for consistency
+  image: "https://res.cloudinary.com/djuzk5um3/image/upload/v1770063847/lease_qa_01_xchetd.png",
+  tag: ["logo"],
+  project: "propia",
+  delayAnimation: "0",
+  modalDetails: [
+    {
+      project: "Propia",
+      Target: "Landlords",
+      language:
+        "Python, FastAPI, Async SQLAlchemy, PostgreSQL, Docker, PaddleOCR, AWS S3",
+      // modal: original full image
+      preview:"Cloudinary Link to view full image",
+      link:
+        "https://res.cloudinary.com/djuzk5um3/image/upload/v1770063847/lease_qa_01_xchetd.png",
+    },
+  ],
+},
 
 
   /* =======================
