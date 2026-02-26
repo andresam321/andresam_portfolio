@@ -10,11 +10,9 @@ const heroContent = {
   heroMobileImage: heroImgMobile,
   heroTitleName: "Andres Mercado",
   heroDesignation: "Software Engineer",
-  heroDescriptions: `Hi, I’m Andres — a backend-focused software engineer who builds systems for real-world impact.
-  I design and ship production-grade APIs, async workflows, and data pipelines that simplify complex problems and hold up in real usage.
-  My path into tech started by fixing inefficiencies I saw firsthand, and that mindset still drives how I build today.
-  I care about clean system design, clear boundaries, and solutions that are intentional, resilient, and practical.
-  I adapt quickly, take ownership end to end, and aim to leave every system better than I found it.`,
+  heroDescriptions: `Hi, I’m Andres, a backend focused software engineer.
+I build async Python systems, job based workflows, and data intensive APIs with PostgreSQL and cloud infrastructure.
+Most recently, I have been working on OCR ingestion pipelines and real time voice backends, with a focus on reliability, concurrency, and clear system design.`,
 
   heroBtn: "more about me",
 };

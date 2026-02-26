@@ -1,63 +1,55 @@
 import React from "react";
 
 const experienceContent = [
-{
-    year: "Oct 2025 – Present",
-    position: "Backend Engineer (Personal Project)",
-    companyName: "Propia",
+
+  {
+    year: "Feb 2026 – Present",
+    position: "Backend Engineer (VoiceCompanionAI – Personal Project)",
+    companyName: "Personal Project",
     details: [
-      "Building a backend-first lease ingestion platform using FastAPI, async PostgreSQL, and Docker.",
-      "Designed async job workflows (queue → GPU OCR worker → DB → client sync) for document processing.",
-      "Improved lease section chunking reliability with state and lease-type profiles, enabling embeddings and semantic search.",
-      "Integrated AWS S3 for document storage and multi-step ingestion flows.",
+      "Designing a wake-word activated AI companion using FastAPI, async PostgreSQL, and Raspberry Pi integration.",
+      "Implementing a PostgreSQL-backed job queue using SELECT FOR UPDATE SKIP LOCKED for safe concurrent processing.",
+      "Building a device → API → background worker pipeline with idempotent job handling and retry/backoff logic.",
+      "Integrating OpenAI APIs and pgvector to store and retrieve conversational context."
     ],
   },
-{
-  year: "June 2025 – September 2025",
-  position: "Backend Engineer (Contract)",
-  companyName: "Stacksync",
-  details: `At Stacksync, a Y Combinator-backed startup focused on structured data integration, 
-  I engineered multiple stateless backend connectors using Flask. One example included integrating with Firecrawl’s 
-  AI-powered web scraping API to support asynchronous batch scraping through job ID-based workflows and webhook handling. 
-  I designed connectors to fetch results on demand without in-memory storage and implemented retry mechanisms for webhook delivery.
-  I collaborated with fellow engineers to ensure each connector was production-ready, 
-  handling structured JSON parsing and schema flexibility to support seamless downstream integration. 
-  I also contributed to sprint planning and architecture discussions to align with performance and reliability goals.`
-},
+
   {
-    year: "May 2025 - June 2025",
-    position: "Software Engineer (Hey-Compa – Personal Project)",
+    year: "Oct 2025 – Present",
+    position: "Backend Engineer (Propia – Personal Project)",
     companyName: "Personal Project",
-    details: `Hey-Compa is an AI-powered assistant designed to help users — particularly non-English speakers and older adults — understand and manage their bills. The system uses OCR (via PaddleOCR) to extract key billing details 
-    such as vendor, due date, and amount from uploaded images. It then maps that data to step-by-step payment instructions tailored to each provider. Recently, OpenAI’s GPT API was integrated to dynamically generate those instructions from OCR output. 
-    The backend is built using Flask and PostgreSQL, 
-    with a focus on modular design and future scalability.
-     A React + Redux frontend is planned to deliver a smooth, accessible user experience. Future features include voice-guided walkthroughs, SMS reminders, and multilingual support to expand accessibility.`
+    details: [
+      "Building a backend-first lease ingestion platform using FastAPI and async PostgreSQL.",
+      "Designed job-based pipelines (API → OCR worker → DB) for non-blocking document processing.",
+      "Implemented state-aware lease chunking to support embedding-based semantic search.",
+      "Integrated AWS S3 for structured document storage and ingestion workflows."
+    ],
   },
+
   {
-    year: "2022 - 2025",
-    position: "Software Engineer (AeroSkyOps – Internal Tool for Rabbit Aviation)",
+    year: "June 2025 – September 2025",
+    position: "Backend Engineer (Contract)",
+    companyName: "Stacksync (YC W24)",
+    details: [
+      "Built stateless backend connectors using Flask and RESTful API specifications.",
+      "Implemented async job ID–based workflows with webhook delivery for scalable data extraction.",
+      "Designed schema-flexible JSON parsing to support dynamic downstream integrations.",
+      "Collaborated in sprint planning and architecture discussions to improve reliability and performance."
+    ],
+  },
+
+  {
+    year: "2022 – 2024",
+    position: "Software Engineer (AeroSkyOps – Internal Tool)",
     companyName: "Rabbit Aviation",
-    details: `While working as a line service technician at Rabbit Aviation, I identified operational inefficiencies in how aircraft assignments, fuel requests, and owner information were tracked. With permission from the owner, I independently designed and built AeroSkyOps, a full-stack management platform tailored for airport workflows.
-
-Key features include dynamic aircraft parking assignment, real-time fuel request tracking (with “En Route,” “Complete” statuses), and integrations with FlightAware and Weather APIs. I also developed a visual fuel tank tracker and historical parking logs. The platform is deployed via AWS EC2 with Docker, Nginx, and TLS, and integrates AWS S3 for image storage. Redux improved UI responsiveness, and I migrated the backend from MongoDB to PostgreSQL using SQLAlchemy.
-
-Note: Actively deployed and in use. No longer in feature development.`
-  },
-  
-  {
-    year: "2023 - 2024",
-    position: "Full-Stack Software Engineer (Wuber Eats – App Academy Project)",
-    companyName: "Personal Project",
-    details: `Wuber Eats is a full-stack web app inspired by Uber Eats, built during my App Academy training to sharpen my full-stack development and Agile collaboration skills.
-  
-  The platform allows users to browse restaurants, view menus, manage carts, place orders, and leave reviews. Restaurant owners can manage listings, update menus, and respond to feedback.
-  
-  On the backend, I used Flask to build a RESTful API with secure user auth and PostgreSQL for structured, scalable data. On the frontend, I used React with Redux to handle dynamic cart state and ensure a responsive UI. I also integrated Cloudinary for optimized image storage and loading performance.
-  
-  The app was developed in a collaborative Agile environment—daily sprints, stand-ups, and continuous iteration taught me how to communicate blockers, refine features, and move projects forward under real-world constraints.`
+    details: [
+      "Led backend development of an internal aviation operations platform using Flask and PostgreSQL.",
+      "Migrated MongoDB to a relational schema with SQLAlchemy to improve data integrity and query performance.",
+      "Built REST APIs integrating FlightAware and Weather APIs for near-live aviation data.",
+      "Deployed using Docker, AWS EC2, Nginx, and TLS."
+    ],
   }
-  
+
 ];
 
 const Experience = () => {
