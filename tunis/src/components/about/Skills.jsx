@@ -10,9 +10,11 @@ const backendSkills = [
   "Google Cloud Run",
   "Webhooks",
   "PaddleOCR",
-  "pgvector / Vector Search",
+  "Semantic Search",
   "GitHub",
   "Postman",
+  "Flask",
+  "OpenAI APIs"
 ];
 
 const frontendSkills = [
@@ -39,7 +41,7 @@ const Skills = () => {
     <>
       <div className="row">
         <div className="col-12 mb-3">
-          <h4 className="text-uppercase open-sans-font">Backend, Data, Infra</h4>
+          <h4 className="text-uppercase open-sans-font">Backend, AI & Infrastructure</h4>
         </div>
       </div>
       <SkillPillGrid items={backendSkills} />

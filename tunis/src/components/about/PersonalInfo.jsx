@@ -2,7 +2,7 @@ import React from "react";
 
 const personalInfoContent = [
   { meta: "Name", metaInfo: "Andres Mercado" },
-  { meta: "Role", metaInfo: "Backend Software Engineer" },
+  { meta: "Role", metaInfo: "Full-Stack (Backend Leaning) Software Engineer" },
   { meta: "Location", metaInfo: "San Francisco Bay Area" },
   { meta: "Email", metaInfo: "andresam321@proton.me" },
   { meta: "Languages", metaInfo: "English, Spanish" },

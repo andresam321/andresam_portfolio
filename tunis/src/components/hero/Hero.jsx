@@ -10,9 +10,9 @@ const heroContent = {
   heroMobileImage: heroImgMobile,
   heroTitleName: "Andres Mercado",
   heroDesignation: "Software Engineer",
-  heroDescriptions: `Hi, I’m Andres, a backend focused software engineer.
-I build async Python systems, job based workflows, and data intensive APIs with PostgreSQL and cloud infrastructure.
-Most recently, I have been working on OCR ingestion pipelines and real time voice backends, with a focus on reliability, concurrency, and clear system design.`,
+  heroDescriptions: `Hi, I’m Andres, a backend-focused software engineer building async Python systems, workflow-driven backends, and AI-powered infrastructure.  
+
+Most of my projects originate from real-world operational problems I’ve experienced firsthand, ranging from aviation operations to document intelligence workflows. Recently, I’ve been focused on OCR ingestion pipelines, context-aware AI systems, and scalable backend architectures built around reliability, concurrency, and clear system design.`,
 
   heroBtn: "more about me",
 };
