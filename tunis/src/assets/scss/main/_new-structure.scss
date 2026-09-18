@@ -520,12 +520,26 @@ a:focus-visible {
   }
 }
 
+/* Wraps the case-study CTA and (when present) an external "visit the
+   live product" link as siblings, never nested anchors. Row layout that
+   wraps to its own line per button on narrow widths instead of
+   compressing two buttons into one row. */
+.project-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .project-card--supporting {
   border-top-color: rgba(255, 255, 255, 0.25);
   max-width: 480px;
   margin: 0 auto;
   text-align: center;
   align-items: center;
+}
+
+.project-card--supporting .project-card-links {
+  justify-content: center;
 }
 
 .closing-cta {
@@ -591,6 +605,23 @@ a:focus-visible {
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: rgba(255, 255, 255, 0.75);
+}
+
+/* Restrained, text-only — deliberately not styled as a .button so it
+   doesn't compete visually with the section CTAs. Same treatment as
+   .back-link above, just placed after the status badge. */
+.case-study-live-link {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: var(--main-primary-color);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
 }
 
 .case-study-body {

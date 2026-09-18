@@ -37,6 +37,17 @@ const CaseStudy = () => {
         >
           {caseStudy.status}
         </p>
+        {caseStudy.liveUrl && (
+          <a
+            href={caseStudy.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="case-study-live-link"
+          >
+            Visit {caseStudy.name}
+            <span aria-hidden="true"> &#8599;</span>
+          </a>
+        )}
       </header>
 
       <div className="case-study-body container">

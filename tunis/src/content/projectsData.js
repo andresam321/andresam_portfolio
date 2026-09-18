@@ -17,6 +17,7 @@ const projectsData = [
     description:
       "ContextFlow came out of my own job search — reaching out to one contact for one role kept meaning the same repeated loop across multiple disconnected tools. ContextFlow consolidates that into one system: it generates outreach tailored to who you're actually talking to, integrates with Gmail to send it, and handles the work in the background rather than blocking on it. It's currently running in production.",
     cta: { label: "Read the case study", to: "/projects/contextflow" },
+    liveUrl: "https://contextflow.dev",
   },
   {
     slug: "aeroskyops",
