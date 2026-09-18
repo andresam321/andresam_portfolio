@@ -135,15 +135,23 @@ a:focus-visible {
   }
 
   /* Active route: a filled pill rather than the legacy full-circle fill.
-     The yellow skin still supplies the background-color on this
-     selector — this just reshapes it into the new bar layout and fixes
-     the text/icon contrast on that fill. */
-  .header ul.icon-menu li.icon-box.react-tabs__tab--selected a {
+     Supplies its own background directly, plus the text/icon contrast
+     fix for that fill.
+
+     SELECTOR NOTE: react-tabs__tab--selected is applied by NavLink
+     (MainNav.jsx) to the <a> itself, never to the parent <li> — every
+     rule below targets the <a> for that reason. This file and
+     main/skins/_yellow.scss previously wrote
+     li.icon-box.react-tabs__tab--selected, which never matched
+     anything (no <li> ever carries that class), so the active-route
+     highlight never rendered at all, on either breakpoint. */
+  .header ul.icon-menu li.icon-box a.react-tabs__tab--selected {
+    background-color: var(--main-primary-color);
     color: #111;
   }
 
-  .header ul.icon-menu li.icon-box.react-tabs__tab--selected i.fa,
-  .header ul.icon-menu li.icon-box.react-tabs__tab--selected .icon-box-label {
+  .header ul.icon-menu li.icon-box a.react-tabs__tab--selected i.fa,
+  .header ul.icon-menu li.icon-box a.react-tabs__tab--selected .icon-box-label {
     color: #111 !important;
   }
 
@@ -227,16 +235,11 @@ a:focus-visible {
     color: rgba(255, 255, 255, 0.55);
   }
 
-  .header ul.icon-menu li.icon-box.react-tabs__tab--selected {
-    background: transparent !important;
-    position: relative;
-  }
-
-  .header ul.icon-menu li.icon-box.react-tabs__tab--selected i.fa {
+  .header ul.icon-menu li.icon-box a.react-tabs__tab--selected i.fa {
     color: var(--main-primary-color) !important;
   }
 
-  .header ul.icon-menu li.icon-box.react-tabs__tab--selected::after {
+  .header ul.icon-menu li.icon-box a.react-tabs__tab--selected::after {
     content: "";
     position: absolute;
     bottom: 2px;
