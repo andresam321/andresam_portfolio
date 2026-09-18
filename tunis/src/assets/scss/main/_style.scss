@@ -48,7 +48,12 @@ html {
   height: 100%;
 }
 :root {
-  --main-primary-color: #0008ff;
+  /* Pre-existing template bug: this was hardcoded to blue (#0008ff) even
+     though only the "yellow" skin (main/skins/_yellow.scss) is ever
+     imported/used anywhere in this codebase — the accent has been
+     rendering blue site-wide despite the "yellow" naming throughout.
+     Corrected to the intended yellow accent. */
+  --main-primary-color: #ffb400;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -400,8 +405,15 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   font-weight: 600;
   color: #fff;
   background-color: transparent;
-  outline: none !important;
+  /* was "outline: none !important" — suppressed keyboard focus entirely
+     with no visible alternative. Kept clean for mouse clicks, restored
+     for keyboard via .button:focus-visible in main/_new-structure.scss. */
+  outline: none;
   cursor: pointer !important;
+}
+.button:focus-visible {
+  outline: 2px solid var(--main-primary-color) !important;
+  outline-offset: 3px;
 }
 
 .button .button-text {
@@ -530,7 +542,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
           top: 14px;
         }
       }
-      h2 {
+      .icon-box-label {
         display: none;
       }
     }
@@ -586,7 +598,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   color: #fff;
 }
 
-.header .icon-box h2 {
+.header .icon-box .icon-box-label {
   font-size: 15px;
   font-weight: 500;
 }
@@ -606,7 +618,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   top: 15px;
 }
 
-.header .icon-box h2 {
+.header .icon-box .icon-box-label {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -623,7 +635,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   margin: 0;
 }
 
-.header .icon-box:hover h2 {
+.header .icon-box:hover .icon-box-label {
   opacity: 1;
   right: 27px;
   margin: 0;
@@ -818,7 +830,11 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   opacity: 0.8;
 }
 
-.about .resume-box h5 {
+/* Was ".about .resume-box h5" — Experience/Education entry titles moved
+   to h2/h3 respectively to fix an h1->h5 heading-hierarchy skip; selector
+   updated to match, styling unchanged. */
+.about .resume-box h2,
+.about .resume-box h3 {
   font-size: 18px;
   margin: 7px 0 10px;
 }
@@ -1140,8 +1156,14 @@ body.light .contact .custom-span-contact a {
   color: #fff;
   padding: 11px 26px;
   border-radius: 30px;
-  outline: none !important;
+  outline: none;
   transition: 0.3s;
+}
+.contact .contactform input[type="text"]:focus-visible,
+.contact .contactform input[type="email"]:focus-visible,
+.contact .contactform textarea:focus-visible {
+  outline: 2px solid var(--main-primary-color) !important;
+  outline-offset: 2px;
 }
 .contact .contactform .form-group {
   margin-bottom: 30px;
@@ -1164,7 +1186,7 @@ body.light .contact .custom-span-contact a {
     height: 200px;
     overflow: hidden;
     border-radius: 30px;
-    outline: none !important;
+    outline: none;
     transition: 0.3s;
   }
 }
@@ -1711,7 +1733,8 @@ body.light .contact .custom-span-contact a {
     padding-bottom: 0;
   }
 
-  .about .resume-box h5 {
+  .about .resume-box h2,
+  .about .resume-box h3 {
     font-size: 17px;
   }
 
@@ -1894,8 +1917,12 @@ body.light::-webkit-scrollbar-thumb {
   border-radius: 20px; /* roundness of the scroll thumb */
   border: 3px solid #fff; /* creates padding around scroll thumb */
 }
-button:focus {
-  outline: none !important;
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+button:focus-visible {
+  outline: 2px solid var(--main-primary-color) !important;
+  outline-offset: 2px;
 }
 
 // bootstrap 5 customization

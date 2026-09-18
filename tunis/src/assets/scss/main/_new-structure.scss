@@ -1,0 +1,767 @@
+/* =================================================================== */
+/* Phase 5 structural + visual styles: nav, hero, project cards, case
+   studies. Loaded after main/_style.scss and before main/skins/_yellow,
+   so layout rules here win over the legacy stylesheet by cascade order,
+   while the yellow skin's color rules still apply on top where intended.
+====================================================================== */
+
+/* The legacy template suppressed :focus outlines in several places
+   (main/_style.scss) with no visible alternative. Audited and fixed at
+   the source for .button, native <button>, and the contact form fields
+   (see main/_style.scss); this covers plain links and the nav specifically. */
+.header ul.icon-menu li.icon-box a:focus-visible,
+.project-card a:focus-visible,
+.case-study-header a:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--main-primary-color);
+  outline-offset: 3px;
+}
+
+/* Unified, restrained page-title system — replaces the inherited Tunis
+   "MY PROJECTS" / "ABOUT ME" / etc. treatment (56px, font-weight 900),
+   which had become the strongest remaining template fingerprint on the
+   site. Brought down toward the same visual register the case-study h1
+   already uses, and made fluid so it scales continuously with viewport
+   width instead of jumping at a breakpoint. Locked wording is untouched —
+   this only changes size/weight. */
+.title-section h1 {
+  font-size: clamp(30px, 5vw, 44px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
+
+/* Split top/bottom: keep generous top clearance (nav clearance + visual
+   weight consistent across About/Experience/Projects/Contact) but cut the
+   bottom padding substantially — the title should introduce the content
+   below it, not float disconnected from it with a huge dead zone. */
+.title-section {
+  padding: clamp(50px, 8vw, 80px) 0 clamp(18px, 3vw, 28px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Navigation — desktop becomes a real top bar with visible labels
+   instead of the legacy hover-to-reveal floating icon circles. Mobile
+   keeps the existing bottom icon bar (already reads well) unchanged. */
+/* ---------------------------------------------------------------- */
+
+@media (min-width: 992px) {
+  .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 22px 40px;
+    z-index: 999;
+    background: linear-gradient(
+      to bottom,
+      rgba(17, 17, 17, 0.92) 0%,
+      rgba(17, 17, 17, 0) 100%
+    );
+  }
+
+  .header ul.icon-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .header ul.icon-menu li.icon-box {
+    width: auto;
+    height: auto;
+    margin: 0;
+    border-radius: 20px;
+    background: transparent;
+  }
+
+  .header ul.icon-menu li.icon-box a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 20px;
+    color: #ddd;
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:link,
+    &:visited {
+      color: #ddd;
+      text-decoration: none;
+    }
+  }
+
+  .header ul.icon-menu li.icon-box:hover a {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .header ul.icon-menu li.icon-box:hover i.fa,
+  .header ul.icon-menu li.icon-box:hover .icon-box-label {
+    color: #fff;
+  }
+
+  .header ul.icon-menu li.icon-box i.fa {
+    position: static;
+    font-size: 15px;
+    color: #ddd;
+  }
+
+  .header .icon-box .icon-box-label {
+    position: static;
+    opacity: 1;
+    z-index: auto;
+    height: auto;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    background: none !important;
+    color: #ddd;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+
+  /* Active route: a filled pill rather than the legacy full-circle fill.
+     The yellow skin still supplies the background-color on this
+     selector — this just reshapes it into the new bar layout and fixes
+     the text/icon contrast on that fill. */
+  .header ul.icon-menu li.icon-box.react-tabs__tab--selected a {
+    color: #111;
+  }
+
+  .header ul.icon-menu li.icon-box.react-tabs__tab--selected i.fa,
+  .header ul.icon-menu li.icon-box.react-tabs__tab--selected .icon-box-label {
+    color: #111 !important;
+  }
+
+  /* The old template reserved a full-height fixed image column; content
+     pages (everything but Home) don't use it, so give them normal flow
+     with room below the new fixed top bar. */
+  .about .main-content,
+  .portfolio > section,
+  .contact > .container,
+  .case-study-header,
+  .title-section {
+    padding-top: 70px;
+  }
+}
+
+/* Theme toggle lives inside the nav (see MainNav.jsx) instead of as its
+   own separately-fixed widget, so it can never float over page content.
+   Its own component CSS (main/_switcher.scss) hard-codes
+   position:fixed/size for its old standalone use — neutralized here so it
+   behaves as a normal nav flex item at every width instead. */
+.nav-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .theme-switcher-label {
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-theme-toggle .theme-switcher-label {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* Mobile bottom nav — visual redesign. Previously a flat #2b2a2a gray
+   toolbar with a solid #444 gray circle behind every icon, reading as a
+   generic heavy strip unrelated to the dark/yellow system. Now a
+   translucent, blurred dark bar (matches the site's near-black background
+   rather than sitting on top of it as a separate gray slab), with a thin
+   top hairline for separation instead of a hard block edge. Icons are
+   transparent by default; the active route is shown via the yellow accent
+   color plus a small underline indicator rather than a filled block —
+   still immediately understandable, just lighter. The bottom-navigation
+   concept itself, its icon set, and its safe-area handling are unchanged. */
+@media (max-width: 991px) {
+  .header {
+    background: rgba(17, 17, 17, 0.88);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .header ul.icon-menu li.icon-box {
+    background: transparent !important;
+  }
+
+  .header ul.icon-menu li.icon-box i.fa {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .header ul.icon-menu li.icon-box.react-tabs__tab--selected {
+    background: transparent !important;
+    position: relative;
+  }
+
+  .header ul.icon-menu li.icon-box.react-tabs__tab--selected i.fa {
+    color: var(--main-primary-color) !important;
+  }
+
+  .header ul.icon-menu li.icon-box.react-tabs__tab--selected::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--main-primary-color);
+  }
+
+  .nav-theme-toggle .theme-switcher-label {
+    background-color: transparent;
+  }
+
+  .nav-theme-toggle .theme-switcher-label:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-theme-toggle .switch-handle i {
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+/* At 320-400px, six 45px icon buttons plus the theme toggle leave very
+   little breathing room (270px of icons alone in a 320px viewport). This
+   is a deliberate, intentional compact tier for narrow phones — not a
+   continuation of shrinking indefinitely — sized to keep touch targets
+   close to the 44px guideline while restoring comfortable gaps. Labels
+   were already icon-only below 991px (see main/_style.scss), so there's
+   no text-truncation tradeoff being made here, only icon/gap sizing. */
+@media (max-width: 400px) {
+  .header ul.icon-menu {
+    justify-content: space-between;
+  }
+
+  .header ul.icon-menu li.icon-box {
+    width: 40px !important;
+    height: 40px !important;
+
+    i.fa {
+      font-size: 17px;
+    }
+  }
+
+  .nav-theme-toggle .theme-switcher-label {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-theme-toggle .switch-handle i {
+    font-size: 22px;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Hero — self-contained, normal-flow, fluid. No position:fixed anywhere
+   in here; the old fixed portrait was the root cause of it overlapping
+   Featured Work once you scrolled past the hero. This section now scrolls
+   away as a unit like any other section. Sizing uses clamp()/fr units so
+   it adapts continuously rather than jumping at fixed breakpoints. */
+/* ---------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(24px, 5vw, 48px);
+  /* Top padding stays compact below 992px — there's no fixed top bar to
+     clear until the desktop nav appears (see the 992px nav breakpoint
+     above), so mobile/tablet don't need the old fixed 90-140px reserved
+     purely for that. Bottom padding is intentionally small everywhere:
+     that's the hero-to-Featured-Work gap, cut substantially from before. */
+  padding: clamp(36px, 7vw, 56px) clamp(20px, 5vw, 60px) clamp(16px, 3vw, 28px);
+  overflow: hidden;
+  isolation: isolate;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding-left: clamp(40px, 6vw, 100px);
+    padding-right: clamp(40px, 6vw, 100px);
+  }
+
+  @media (min-width: 992px) {
+    padding-top: clamp(90px, 12vw, 130px);
+  }
+}
+
+/* Decorative accent, scoped to the hero section itself (position:absolute
+   relative to .hero, not the viewport) — it scrolls away with the hero
+   because it's part of its normal-flow box, not fixed. Reduced from the
+   original template's full-viewport diagonal sweep to a smaller corner
+   accent so yellow reads as a deliberate structural touch rather than
+   the dominant visual element. */
+.hero-shard {
+  position: absolute;
+  z-index: 0;
+  background: var(--main-primary-color);
+  opacity: 0.9;
+  border-radius: 30% 70% 65% 35% / 40% 45% 55% 60%;
+  pointer-events: none;
+
+  /* On the single-column mobile layout, content stacks top-to-bottom
+     (portrait -> copy -> CTAs), so a bottom-anchored shard sized for
+     desktop ends up sitting right behind the CTA row. Kept small and
+     tucked behind the portrait area instead, where there's nothing
+     interactive nearby. */
+  width: 120px;
+  height: 120px;
+  left: -50px;
+  top: -20px;
+  bottom: auto;
+
+  @media (min-width: 900px) {
+    width: clamp(180px, 30vw, 420px);
+    height: clamp(180px, 30vw, 420px);
+    left: clamp(-90px, -8vw, -40px);
+    top: auto;
+    bottom: clamp(-90px, -8vw, -40px);
+  }
+}
+
+.hero-portrait {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: clamp(160px, 40vw, 280px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+  }
+
+  @media (min-width: 900px) {
+    width: clamp(240px, 26vw, 380px);
+    border-radius: 24px;
+  }
+
+  /* The 160px floor above is comfortable at 390px+, but proportionally
+     large on a 320-360px screen where the portrait, identity line,
+     headline, paragraph, two CTAs, and the fixed bottom nav all have to
+     fit above the fold without feeling cramped. */
+  @media (max-width: 380px) {
+    width: clamp(120px, 34vw, 160px);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  text-align: center;
+
+  @media (min-width: 900px) {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: clamp(28px, 4.2vw, 48px);
+    line-height: 1.25;
+    margin: 12px 0 18px;
+  }
+
+  p {
+    font-size: clamp(15px, 1.6vw, 17px);
+    line-height: 1.7;
+  }
+}
+
+.hero-identity {
+  font-size: clamp(12px, 1.4vw, 14px);
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(16px, 4vw, 25px);
+  justify-content: center;
+
+  @media (min-width: 900px) {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    gap: 16px;
+  }
+
+  .hero-content h1 {
+    margin: 8px 0 12px;
+  }
+}
+
+.button-outline {
+  background-color: transparent;
+  border: 1px solid var(--main-primary-color);
+
+  .button-text {
+    color: var(--main-primary-color);
+  }
+}
+
+/* Bottom breathing room for the fixed mobile bottom nav, applied once to
+   the shared page wrapper so every routed page gets it — the last
+   paragraph/button/link on any page must clear the nav rather than
+   disappearing under it. Accounts for the nav's own height (~45px icon +
+   16px vertical padding, see main/_style.scss/.header) plus normal
+   breathing room plus the safe-area inset. */
+@media (max-width: 991px) {
+  .tab-panel_list {
+    padding-bottom: calc(45px + 32px + 16px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Featured Work / Projects */
+/* ---------------------------------------------------------------- */
+
+.featured-work {
+  /* Top padding cut substantially — the heading should introduce the
+     cards right below it, not sit in its own disconnected block. Bottom
+     kept a bit more generous as a transition into the closing CTA. */
+  padding: clamp(24px, 4vw, 40px) 0 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  /* So the "View Featured Work" anchor jump doesn't land the heading
+     right under the fixed desktop top bar. */
+  scroll-margin-top: 90px;
+}
+
+/* Fluid two-up grid: columns collapse to one automatically once a card
+   would drop below ~340px, whatever the viewport width is — no fixed
+   "mobile breakpoint" to wait for, so it never looks compressed at
+   in-between tablet/laptop widths. */
+.project-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: clamp(30px, 5vw, 60px);
+  margin-top: clamp(20px, 3vw, 32px);
+}
+
+.project-card-grid--supporting {
+  grid-template-columns: 1fr;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+}
+
+/* Editorial treatment instead of a bordered box: a top rule + generous
+   space does the separating, so the page isn't wall-to-wall rectangles. */
+.project-card {
+  border-top: 2px solid var(--main-primary-color);
+  padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+
+  /* Rendered as h3 on Home (nested under Featured Work's h2) and as h2
+     on the standalone Projects page (nested directly under that page's
+     h1) — same visual size either way. Slightly bolder letter-spacing so
+     the project name reads as a clear scan-anchor above the paragraph,
+     especially useful at mobile widths where the sequence is otherwise
+     heading -> long paragraph -> CTA with little else to break it up. */
+  h2,
+  h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  p {
+    flex-grow: 1;
+    opacity: 0.85;
+    line-height: 1.65;
+    max-width: 62ch;
+  }
+
+  .button {
+    align-self: flex-start;
+    margin-top: 22px;
+  }
+}
+
+.project-card--supporting {
+  border-top-color: rgba(255, 255, 255, 0.25);
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+.closing-cta {
+  padding: 60px 0 80px;
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Case studies */
+/* ---------------------------------------------------------------- */
+
+.case-study-header {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    color: var(--main-primary-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    margin-bottom: 10px;
+  }
+}
+
+.case-study-tagline {
+  font-size: clamp(15px, 2vw, 18px);
+  opacity: 0.75;
+}
+
+.case-study-status {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.case-study-status--live {
+  background-color: rgba(76, 217, 100, 0.12);
+  border: 1px solid rgba(76, 217, 100, 0.45);
+  color: #7be495;
+}
+
+.case-study-status--neutral {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.case-study-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-bottom: 90px;
+}
+
+.case-study-section {
+  margin-bottom: 55px;
+
+  /* Section headings stay neutral — the accent color is reserved for
+     the small number label, the architecture-flow rule, decision
+     titles, and links, so yellow reads as an intentional accent rather
+     than covering every heading on the page. */
+  h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 14px;
+    font-size: clamp(17px, 2.6vw, 20px);
+    letter-spacing: 0.02em;
+    margin-bottom: 22px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 14px;
+  }
+
+  .section-number {
+    flex-shrink: 0;
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--main-primary-color);
+    opacity: 0.9;
+  }
+
+  p {
+    line-height: 1.75;
+    margin-bottom: 18px;
+    opacity: 0.9;
+    max-width: 68ch;
+  }
+}
+
+/* A real architecture element rather than a sentence with arrows in it:
+   each "->"-separated stage becomes its own node. Row-and-wrap on wider
+   screens; a clean vertical node -> arrow -> node column below ~560px,
+   which reads far better than squeezing the desktop row down — the arrow
+   glyph itself rotates 90deg to still read as "flows into" pointing down. */
+.architecture-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 20px 0;
+
+  @media (max-width: 560px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.architecture-flow-node {
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 10px 14px;
+  white-space: normal;
+  max-width: min(220px, 100%);
+  word-break: break-word;
+
+  @media (max-width: 560px) {
+    max-width: 100%;
+  }
+}
+
+.architecture-flow-arrow {
+  color: var(--main-primary-color);
+  font-size: 16px;
+  flex: 0 0 auto;
+
+  @media (max-width: 560px) {
+    display: block;
+    transform: rotate(90deg);
+    margin: 2px 0;
+  }
+}
+
+.decision-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Left-border + hanging layout instead of four stacked bordered boxes —
+   still clearly delineated and scannable, without every decision living
+   in its own rectangle. */
+.decision-block {
+  padding: 22px 0 22px clamp(14px, 3vw, 20px);
+  border-left: 2px solid var(--main-primary-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  h3 {
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+    color: var(--main-primary-color);
+  }
+
+  p {
+    margin-bottom: 0;
+    opacity: 0.9;
+    max-width: 68ch;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Contact — cleanup pass. The old Tunis giant-pill form fields and
+   oversized decorative icons were the last visible template fingerprint
+   on the site; brought in line with the restrained system used
+   elsewhere (small border-radius, modest icon sizing) without a full
+   redesign of the page. */
+/* ---------------------------------------------------------------- */
+
+.contact-intro {
+  line-height: 1.35;
+  margin-bottom: 24px !important;
+}
+
+/* Address icons: were 33-39px with 50px of reserved left padding — the
+   most visibly "decorative template" element remaining on the page.
+   Brought down to a size that reads as a label icon, not an illustration. */
+.contact .custom-span-contact {
+  padding-left: 30px;
+}
+
+.contact .custom-span-contact i {
+  font-size: 17px;
+  top: 3px;
+}
+
+.contact .custom-span-contact i.fa-phone-square {
+  font-size: 20px;
+  top: 1px;
+}
+
+/* Form fields: full-pill (border-radius: 30px) -> a modest rounded rect,
+   consistent with the small-radius treatment already used for
+   architecture-flow nodes and decision blocks elsewhere on the site. */
+.contact .contactform input[type="text"],
+.contact .contactform input[type="email"],
+.contact .contactform textarea {
+  border-radius: 6px;
+  padding: 13px 18px;
+}
+
+.contact .contactform .form-group {
+  margin-bottom: 20px;
+}
+
+/* Removing the broken EmailJS form (see ContactPage.jsx) left the page
+   noticeably shorter than the layout's old two-column assumption, with a
+   large empty region below the remaining content. Minimal fix: give the
+   remaining block some room to breathe vertically instead of sitting at
+   the top of a mostly-empty page. */
+.contact--no-form .container {
+  padding-top: clamp(20px, 4vw, 40px);
+  padding-bottom: clamp(60px, 10vw, 120px);
+}

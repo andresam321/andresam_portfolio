@@ -1,35 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
+// Locked Phase 4 Experience copy. Experience contains real
+// employment/contract work only — Propia and ContextFlow are Projects, not
+// Experience entries, and AeroSkyOps is never framed as formal engineering
+// employment at Rabbit Aviation. Do not edit wording without going back
+// through the positioning process.
 const experienceContent = [
-  {
-    year: "2026 – Present",
-    position: "Full-Stack Engineer (ContextFlow – Personal Project)",
-    companyName: "Personal Project",
-    details:
-      "Building a context-aware AI workflow platform focused on personalized outreach and communication systems. Designing multi-context backend architectures, async orchestration workflows, and PostgreSQL-backed context systems for scalable AI-assisted messaging.",
-  },
-
-  {
-    year: "Oct 2025 – Present",
-    position: "Full-Stack Engineer (Propia – Personal Project)",
-    companyName: "Personal Project",
-    details:
-      "Building a backend-first lease intelligence platform using FastAPI and async PostgreSQL. Designed job-based OCR ingestion pipelines, state-aware lease chunking, and semantic search workflows for AI-powered document analysis and querying.",
-  },
-
   {
     year: "June 2025 – September 2025",
     position: "Backend Engineer (Contract)",
     companyName: "Stacksync (YC W24)",
     details:
-      "Worked on backend integrations and workflow infrastructure at Stacksync, building stateless API connectors and schema-driven integration systems focused on reliability, scalability, and handling messy external data and document workflows.",
+      "Built backend integrations and production API connectors for Stacksync's real-time CRM/database sync platform, including connectors for external services such as Firecrawl and NeverBounce. The work centered on schema-driven data mapping — normalizing inconsistent external data into a structure the sync engine could rely on. The first connector took about three weeks to work through end-to-end; once I had a repeatable pattern for structuring and mapping a new one, later connectors took about a day.",
   },
   {
-    year: "2022 – 2024",
-    position: "Full-Stack Engineer (AeroSkyOps – Internal Tool)",
+    year: "September 2017 – August 2023",
+    position: "Line Service Technician",
     companyName: "Rabbit Aviation",
     details:
-      "Built an internal aviation operations platform after identifying inefficiencies while working in airport operations. Developed Flask/PostgreSQL backend systems, integrated FlightAware and weather APIs, and deployed the platform using Docker and AWS infrastructure.",
+      "Fueled aircraft, coordinated directly with pilots and customers, and handled billing and day-to-day fuel operations at a working general aviation airport. Firsthand exposure to the airport's manual aircraft parking and location-tracking process eventually led to AeroSkyOps, an independent project built to address that workflow — see ",
+    linkLabel: "Projects",
+    linkTo: "/projects",
   },
 ];
 
@@ -46,14 +38,21 @@ const Experience = () => {
             {val.year}
           </span>
 
-          <h5 className="poppins-font text-uppercase">
+          <h2 className="poppins-font text-uppercase">
             {val.position}
             <span className="place open-sans-font">
               {val.companyName}
             </span>
-          </h5>
+          </h2>
 
-          <p className="open-sans-font">{val.details}</p>
+          <p className="open-sans-font">
+            {val.details}
+            {val.linkLabel ? (
+              <>
+                <Link to={val.linkTo}>{val.linkLabel}</Link>.
+              </>
+            ) : null}
+          </p>
         </li>
       ))}
     </ul>

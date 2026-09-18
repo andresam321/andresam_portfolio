@@ -31,10 +31,10 @@ const Education = () => {
             <i className="fa fa-briefcase"></i>
           </div>
           <span className="time open-sans-font text-uppercase">{val.year}</span>
-          <h5 className="poppins-font text-uppercase">
-            {val.degree}
+          <h3 className="poppins-font text-uppercase">
+            {val.course}
             <span className="place open-sans-font">{val.institute}</span>
-          </h5>
+          </h3>
           <p className="open-sans-font">{val.details}</p>
         </li>
       ))}

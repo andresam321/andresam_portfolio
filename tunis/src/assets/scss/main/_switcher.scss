@@ -42,8 +42,26 @@
         }
     }
 
+    /* Was "display: none" — that removes the checkbox from the tab
+       order entirely, making the theme toggle keyboard-unreachable on
+       any viewport (confirmed via a full keyboard-navigation audit).
+       Visually hidden but still focusable; a focus-visible ring is drawn
+       on the visible .switch-handle sibling via the rule below. */
     .theme-switcher {
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .theme-switcher:focus-visible ~ .switch-handle {
+        outline: 2px solid var(--main-primary-color);
+        outline-offset: 3px;
     }
     .light-text {
         color: #000;
