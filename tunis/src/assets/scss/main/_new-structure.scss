@@ -208,6 +208,21 @@ a:focus-visible {
     background: transparent !important;
   }
 
+  /* Real hit-target fix: at this width the icon (main/_style.scss,
+     .header .icon-box i.fa) is position:absolute + pointer-events:none,
+     and the label is display:none (legacy hover-reveal layout, icon-only
+     here) — so the <a> has no in-flow content and collapses to a 0x0 box.
+     Visually the icon still renders (it's positioned relative to this
+     li), but nothing was actually there to receive a tap: a real touch
+     landed on this <li> itself, which has no href. Filling the <a> to
+     the full icon-box area (already position:relative) restores a real,
+     tappable hit target without touching the icon's own positioning. */
+  .header ul.icon-menu li.icon-box a {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
   .header ul.icon-menu li.icon-box i.fa {
     color: rgba(255, 255, 255, 0.55);
   }
