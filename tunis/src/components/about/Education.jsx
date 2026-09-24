@@ -35,7 +35,11 @@ const Education = () => {
             {val.course}
             <span className="place open-sans-font">{val.institute}</span>
           </h3>
-          <p className="open-sans-font">{val.details}</p>
+          {val.details.map((detail, j) => (
+            <p className="open-sans-font" key={j}>
+              {detail}
+            </p>
+          ))}
         </li>
       ))}
     </ul>

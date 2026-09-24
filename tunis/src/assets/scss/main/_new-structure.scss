@@ -814,3 +814,25 @@ a:focus-visible {
   padding-top: clamp(20px, 4vw, 40px);
   padding-bottom: clamp(60px, 10vw, 120px);
 }
+
+/* Inline body-copy link (About → Propia). Inherits the surrounding text
+   color so it reads correctly in both dark and light themes, with the
+   accent color carried by the underline only. */
+.text-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--main-primary-color);
+  text-underline-offset: 3px;
+}
+
+.text-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Education entries render each detail as its own paragraph (they were
+   previously an array dumped into one <p>, running the sentences
+   together). The legacy .resume-box p rule zeroes all margins, so give
+   consecutive detail lines a little separation. */
+.about .resume-box p + p {
+  margin-top: 6px;
+}

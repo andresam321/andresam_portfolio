@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PersonalInfo from "../components/about/PersonalInfo";
 import Education from "../components/about/Education";
 import useDocumentTitle from "../Hooks/useDocumentTitle";
 import cv from "../assets/img/AndresMercado_resume.pdf";
 
-// Locked Phase 4 About copy (3 blocks). Do not edit wording without going
-// back through the positioning process.
+// About copy: headline + two story paragraphs, ending on the Propia
+// paragraph. Story copy was revised in the positioning review
+// (foreclosure/family finances deliberately kept off the site). Do not edit
+// wording without going back through the positioning process.
 const About = () => {
   useDocumentTitle(
     "About",
@@ -31,24 +34,25 @@ const About = () => {
           </div>
 
           <div className="col-xl-6 col-lg-7 col-12 mt-5 mt-lg-0">
+            <h2 className="custom-title ft-wt-600 mb-0">
+              I learned ownership before I learned software.
+            </h2>
             <p className="open-sans-font">
-              A bit of context on where this comes from.
+              By 2018, I was buying rental property and eventually owned and
+              managed three properties while working full-time as a line
+              service technician at Rabbit Aviation. Tenants, maintenance,
+              and the decisions and problems that came with them were mine
+              to handle, often remotely.
             </p>
             <p className="open-sans-font">
-              For six years, I worked as a line service technician at Rabbit
-              Aviation — fueling aircraft, working directly with pilots, and
-              keeping a small, busy operation running day to day. Around the
-              same time, I was investing in real estate on my own, dealing
-              with tenants, contractors, and everything else that comes
-              with managing property myself. None of that involved software
-              — it was judgment, phone calls, and showing up. Learning to
-              build software later gave me a new way to build solutions for
-              problems I was already used to facing directly.
-            </p>
-            <p className="open-sans-font">
-              What I'm looking for now is a team that solves hard problems
-              together — where I can contribute meaningfully, learn from
-              other engineers, and keep growing over time.
+              I learned to build software later.{" "}
+              <Link to="/projects/propia" className="text-link">
+                Propia
+              </Link>{" "}
+              came from that experience: it lets you ask questions about a
+              lease and flags terms that may conflict with California rental
+              rules — because I knew what it was like to dig through a lease
+              trying to find one clause.
             </p>
           </div>
         </div>

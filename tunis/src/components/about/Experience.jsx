@@ -49,7 +49,10 @@ const Experience = () => {
             {val.details}
             {val.linkLabel ? (
               <>
-                <Link to={val.linkTo}>{val.linkLabel}</Link>.
+                <Link to={val.linkTo} className="text-link">
+                  {val.linkLabel}
+                </Link>
+                .
               </>
             ) : null}
           </p>
